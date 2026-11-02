@@ -1,0 +1,6 @@
+# versions used to produce the results in the chapter
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+numba==0.68.0  # optional, only speeds up the ODE solver

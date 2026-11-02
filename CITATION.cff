@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the book chapter below."
+title: "Hybrid mechanistic–machine learning epidemic forecasting: case study code"
+authors:
+  - family-names: "Ucakan"
+    given-names: "Yasin"
+    orcid: "https://orcid.org/0000-0001-5743-1862"
+    affiliation: "İstanbul Rumeli University"
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-02"
