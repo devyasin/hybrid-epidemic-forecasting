@@ -31,7 +31,7 @@ python3 experiment.py            # everything
 python3 experiment.py main       # main study only
 python3 experiment.py scenarios  # latent-period scenarios only
 ```
-Runtime depends on the hardware: with two parallel workers the main study took about 1.5 to 4 hours on the two computers tested, and the latent-period scenarios about half as long. Results may differ in the last digits across platforms (floating-point arithmetic); the values reported in the chapter are unaffected.
+Runtime depends on the hardware: with two parallel workers the main study took about 1.4 to 3.7 hours on the two computers tested, and the latent-period scenarios about half as long. Results may differ in the last digits across platforms (floating-point arithmetic); the values reported in the chapter are unaffected.
 Outputs: `results.json`, `scenario_results.json`, `results_table.tex`, `prob_table.tex`, `calib_table.tex`,
 `variant_table.tex`, `sens_table.tex`, `scenario_table.tex`, `fig_data.pdf`, `fig_forecast.pdf`.
 All seeds are fixed (realisation r uses seed 1000 + r). `numba` is optional and only speeds up the ODE solver;

@@ -34,7 +34,7 @@ except ImportError:  # identical results, only slower
     def njit(f=None, **kw):
         return f if f is not None else (lambda g: g)
 
-# ---------------- settings (all fixed before the experiment was run) ----------------
+# ---------------- settings (all fixed before the experiment was run, except T_SCALE; see the chapter) ----------------
 N, SIGMA, GAMMA, RHO, KDISP = 1e6, 1 / 5, 1 / 7, 0.4, 50.0
 E0_TRUE, I0_TRUE = 50.0, 20.0
 SIGMA_MIS, RHO_MIS, GAMMA_MIS = 1 / 3, 0.3, 1 / 5   # deliberately wrong values (misspecification tests)
@@ -772,7 +772,7 @@ def scenarios_main():
     with open("scenario_results.json", "w") as f:
         json.dump(S, f, indent=1)
     L = [r"\begin{table}[t]", r"\centering",
-         r"\caption{Latent-period scenarios on the original 150-day window (origins 60, 75, 90 and 105): point (MAE) and probabilistic (WIS) accuracy relative to the naive baseline, geometric mean over origins, " + str(N_REP_SCEN) + r" realisations, for a mean latent period of 2, 5 (base case) and 12 days. The transmission scenario $\beta(t)$ is the same in all three. The initial seed is scaled so that the first wave peaks at about 110 reported cases per day. The last row gives the root-mean-square error of the learned $\hat\beta(t)$.}\label{tab:scen}",
+         r"\caption{Latent-period scenarios on a shorter 150-day series (origins 60, 75, 90 and 105): point (MAE) and probabilistic (WIS) accuracy relative to the naive baseline, geometric mean over origins, " + str(N_REP_SCEN) + r" realisations (to limit run time), for a mean latent period of 2, 5 (base case) and 12 days. The transmission scenario $\beta(t)$ is the same in all three. The initial seed is scaled so that the first wave peaks at about 110 reported cases per day. The last row gives the root-mean-square error of the learned $\hat\beta(t)$.}\label{tab:scen}",
          r"\small", r"\begin{tabular}{@{}lrrrrrr@{}}", r"\toprule",
          r" & \multicolumn{3}{c}{Relative MAE} & \multicolumn{3}{c}{Relative WIS} \\",
          r"\cmidrule(lr){2-4}\cmidrule(l){5-7}",
